@@ -8,8 +8,9 @@
 </head>
 <body>
     <?php 
-        $ano_nasc = $_POST['ano_nasc'] ?? 0;
-        $saber_ano = $_POST['saber_ano'] ?? 0;
+        $atual = date('Y');
+        $ano_nasc = $_POST['ano_nasc'] ?? '2000';
+        $saber_ano = $_POST['saber_ano'] ?? $atual;
     ?>
 
     <main>
@@ -17,10 +18,10 @@
         <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 
             <label for="iano_nasc">Ano de Nascimento</label>
-            <input type="number" name="ano_nasc" id="iano_nasc" value="<?=$ano_nasc?>">
+            <input type="number" name="ano_nasc" id="iano_nasc" value="<?=$ano_nasc?>" min="1900">
 
-            <label for="isaber_ano">Quer saber sua idade em que ano? (<?="atualmente estamos em ".date('Y')?>)</label>
-            <input type="number" name="saber_ano" id="isaber_ano" value="<?=$saber_ano?>">
+            <label for="isaber_ano">Quer saber sua idade em que ano? (Atualmente estamos em <strong><?=$atual?></strong>) </label>
+            <input type="number" name="saber_ano" id="isaber_ano" value="<?=$saber_ano?>" min="1900">
             <input type="submit" value="Enviar Resposta">
         
         </form>
