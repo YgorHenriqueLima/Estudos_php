@@ -43,7 +43,11 @@
             $max = 100;
 
             $r10 = rand($min, $max);
-            echo "o valor sorteado foi $r10";
+            echo "o valor sorteado foi $r10 <br>";
+
+            $r11 = 100;
+            $raiz = sqrt($r11);
+            echo "a raiz quadrada de $r11 é $raiz";
         ?>
     </section>
 </body>
